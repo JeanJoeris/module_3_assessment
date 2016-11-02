@@ -31,6 +31,14 @@ class Store
     data[:city]
   end
 
+  def hours
+    data[:hoursAmPm].split(";")
+  end
+
+  def full_address
+    "#{data[:address]} #{data[:address2]}, #{data[:city]}, #{data[:region]} #{data[:postalCode]}"
+  end
+
   private
     attr_reader :data
 end
