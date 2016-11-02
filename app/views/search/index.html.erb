@@ -4,7 +4,7 @@
 <div class="stores-list">
   <% @store_search.stores.each do |store| %>
     <div class="store">
-      <h4><%= store.long_name %></h4>
+      <h4><%= link_to store.long_name, store_path(store.id) %></h4>
       <ul>
         <li><%= store.city %></li>
         <li>Distance: <%= store.distance %></li>

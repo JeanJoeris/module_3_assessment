@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users,  only: [:index, :show]
 
   get '/search', to: "search#index", as: 'search'
+  get '/stores/:store_id', to: "search#show", as: 'store'
 
   namespace :api do
     namespace :v1 do

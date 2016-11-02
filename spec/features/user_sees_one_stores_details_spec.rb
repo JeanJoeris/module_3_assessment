@@ -28,7 +28,7 @@ describe 'Individual store show' do
         expect(page).to have_content("Cherry Creek Shopping Center")
         expect(page).to have_content("Type: Mobile")
         expect(page).to have_content("3000 East First Ave #296, Denver, CO 80206")
-        within("ul") do
+        within(".hours") do
           expect(page).to have_content("Mon: 10am-9pm")
           expect(page).to have_content("Tue: 10am-9pm")
           expect(page).to have_content("Wed: 10am-9pm")
