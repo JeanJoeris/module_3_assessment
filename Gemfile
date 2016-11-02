@@ -12,6 +12,7 @@ gem "faker"
 gem "therubyracer"
 gem "less-rails-bootstrap"
 gem "minitest-rails"
+gem "figaro"
 
 group :development do
   gem "spring"
@@ -20,4 +21,10 @@ end
 group :development, :test do
   gem "minitest-rails-capybara"
   gem "pry", :require => "pry"
+  gem "capybara"
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "vcr"
+  gem "webmock"
+  gem "database_cleaner"
 end
