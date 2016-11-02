@@ -1,15 +1,15 @@
-<h1>Found Stores</h1>
-<h3><%= @data[:total] %> Total Stores</h4>
+<h1>Found Stores Near <%= @zipcode %></h1>
+<h3><%= @store_search.total %> Total Stores</h4>
 
 <div class="stores-list">
-  <% @data[:stores].each do |store| %>
+  <% @store_search.stores.each do |store| %>
     <div class="store">
-      <h4><%= store[:longName] %></h4>
+      <h4><%= store.long_name %></h4>
       <ul>
-        <li><%= store[:city] %></li>
-        <li>Distance: <%= store[:distance] %></li>
-        <li>Phone: <%= store[:phone] %></li>
-        <li>Store Type: <%= store[:storeType] %></li>
+        <li><%= store.city %></li>
+        <li>Distance: <%= store.distance %></li>
+        <li>Phone: <%= store.phone %></li>
+        <li>Store Type: <%= store.type %></li>
       </ul>
     </div>
   <% end %>

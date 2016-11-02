@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
   def index
-    response = Faraday.get("https://api.bestbuy.com/v1/stores((area(80202,25)))?apiKey=#{ENV['best_buy_api_key']}&pageSize=15&format=json")
-    @data = JSON.parse(response.body, symbolize_names: true)
+    @zipcode = search_params[:search]
+    @store_search = StoreSearch.by_zipcode({zip: @zipcode, distance: 25})
   end
 
   private
