@@ -12,5 +12,7 @@ describe 'Item API' do
     expect(response_item[:name]).to eq("Frozen Banana")
     expect(response_item[:description]).to eq("Bluth Original")
     expect(response_item[:image_url]).to eq("http://vignette1.wikia.nocookie.net/arresteddevelopment/images/c/cd/1x05_Charity_Drive_(16).png")
+    expect(response_item).to_not have_key(:created_at)
+    expect(response_item).to_not have_key(:updated_at)
   end
 end

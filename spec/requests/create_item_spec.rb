@@ -18,5 +18,7 @@ describe 'Item API' do
     expect(response_item[:name]).to eq("A cool thing")
     expect(response_item[:description]).to eq("You know you want it")
     expect(response_item[:image_url]).to eq("http://foo.com/a_cool_thing")
+    expect(response_item).to_not have_key(:created_at)
+    expect(response_item).to_not have_key(:updated_at)
   end
 end

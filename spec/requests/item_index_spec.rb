@@ -9,6 +9,8 @@ describe 'Item API' do
     response_items = JSON.parse(response.body, symbolize_names: true)
 
     expect(response.status).to eq(200)
+    expect(response_items.first).to_not have_key(:created_at)
+    expect(response_items.first).to_not have_key(:updated_at)
     expect(response_items.count).to eq(4)
     expect(response_items.first[:name]).to eq("Frozen Banana")
   end
