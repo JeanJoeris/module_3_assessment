@@ -12,7 +12,8 @@ describe 'Best buy store index' do
     # And I should see the long name, city, distance, phone number and store type for each of the 15 results
     visit root_path
 
-    fill_in "search", with "80202"
+    fill_in "search", with: "80202"
+    click_on "search"
 
     expect(current_path).to eq(search_path)
     expect(page).to have_content("17 Total Stores")
