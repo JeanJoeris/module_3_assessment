@@ -1,10 +1,15 @@
 class Store
   def initialize(data)
+    require "pry"; binding.pry
     @data = data
   end
 
   def id
     data[:storeId]
+  end
+
+  def name
+    data[:name]
   end
 
   def long_name
