@@ -10,16 +10,22 @@ describe 'Best buy store index' do
     # And I should see a message that says "17 Total Stores"
     # And I should see exactly 15 results
     # And I should see the long name, city, distance, phone number and store type for each of the 15 results
-    visit root_path
+    VCR.use_cassette("best buy store search") do
+      visit root_path
 
-    fill_in "search", with: "80202"
-    click_on "search"
+      fill_in "search", with: "80202"
+      click_on "search"
 
-    expect(current_path).to eq(search_path)
-    expect(page).to have_content("17 Total Stores")
-    expect(page).to have_css(".store", count: 15)
-    # within(".store:nth-child(1)") do
-    #   expect(page).to have_content
-    # end
+      expect(current_path).to eq(search_path)
+      expect(page).to have_content("17 Total Stores")
+      expect(page).to have_css(".store", count: 15)
+      within(".store:nth-child(1)") do
+        expect(page).to have_content("Best Buy Mobile - Cherry Creek Shopping Center")
+        expect(page).to have_content("Denver")
+        expect(page).to have_content("Distance: 3.25")
+        expect(page).to have_content("Phone: 303-270-9189")
+        expect(page).to have_content("Store Type: Mobile")
+      end
+    end
   end
 end
