@@ -3,6 +3,10 @@ class Store
     @data = data
   end
 
+  def id
+    data[:storeId]
+  end
+
   def long_name
     data[:longName]
   end
