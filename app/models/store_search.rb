@@ -12,6 +12,10 @@ class StoreSearch
     StoreSearch.new({total: data[:total], stores: data[:stores]})
   end
 
+  def self.by_store_id(store_id)
+    Store.new(BestBuyService.by_store_id(store_id)[:stores].first)
+  end
+
   def create_stores(stores_data)
     stores_data.map do |raw_store|
       Store.new(raw_store)

@@ -1,6 +1,5 @@
 class Store
   def initialize(data)
-    require "pry"; binding.pry
     @data = data
   end
 
