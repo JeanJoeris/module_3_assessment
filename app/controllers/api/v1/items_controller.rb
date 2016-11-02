@@ -8,4 +8,10 @@ class Api::V1::ItemsController < ApplicationController
     @item = Item.find(params[:id])
     render json: @item
   end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    head 200
+  end
 end
