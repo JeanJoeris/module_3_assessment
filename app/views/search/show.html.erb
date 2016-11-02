@@ -1,13 +1,18 @@
-<h1><%= @store.name %></h1>
-<p>
-  <%= @store.full_address %>
-</p>
-<p>
-  Type: <%= @store.type %>
-</p>
+<div class="container well">
+  <h1><%= @store.name %></h1>
+  <p>
+    <%= @store.full_address %>
+  </p>
+  <p>
+    Type: <%= @store.type %>
+  </p>
+  <p>
+    Phone: <%= @store.phone %>
+  </p>
 
-<ul class="hours">
-  <% @store.hours.each do |day_hours| %>
-    <li><%= day_hours %></li>
-  <% end %>
-</ul>
+  <ul class="hours">
+    <% @store.hours.each do |day_hours| %>
+      <li><%= day_hours %></li>
+    <% end %>
+  </ul>
+</div>
