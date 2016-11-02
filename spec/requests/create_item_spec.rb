@@ -3,8 +3,8 @@ require 'rails_helper'
 describe 'Item API' do
   it "creates an item" do
     item_params = {
-      name: "A cool thing"
-      description: "You know you want it"
+      name: "A cool thing",
+      description: "You know you want it",
       image_url: "http://foo.com/a_cool_thing"
     }
     expect(Item.count).to eq(0)
@@ -13,7 +13,7 @@ describe 'Item API' do
 
     response_item = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response.body).to eq(201)
+    expect(response.status).to eq(201)
     expect(Item.count).to eq(1)
     expect(response_item[:name]).to eq("A cool thing")
     expect(response_item[:description]).to eq("You know you want it")
